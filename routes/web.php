@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,11 @@ use App\Http\Controllers\CourseController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
 });
+Route::redirect('/', '/landing');
+Route::get('landing', [FrontController::class, 'index'])->name('landing');
+Route::get('details/{slug}', [FrontController::class, 'details'])->name('details');
 
 
 Route::middleware([
