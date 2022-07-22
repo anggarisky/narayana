@@ -11,22 +11,28 @@
     <title>Nara Academy</title>
   </head>
   <body>
+      @include ('components/navbar')
     <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-10 offset-lg-1">
-                <h1 class="mb-5">Available Courses</h1>
+        <div class="row py-5">
+            <div class="col-lg-12 text-center">
+                <h1>
+                    Belajar Dari Mentor Berpengalaman <br> Dengan Arahan Karir Yang Baik
+                </h1>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-10">
                 <div class="row">
                     @foreach($courses as $item_courses)
                     <div class="col-lg-4">
-                        <h3>
-                            {{ $item_courses->title }}
-                        </h3>
-                        <p>
-                            {{ $item_courses->about }}
-                        </p>
-                        <p>
-                            <a href="{{ route('details', $item_courses->slug) }}" class="btn btn-primary">Join Course</a>
-                        </p>
+                        <a href="{{ route('details', $item_courses->slug) }}">
+                            <img src="https://buildwithangga.com/storage/assets/thumbnails/kelas%20full%20stack%20laravel%20react%20js%20bikin%20website%20streaming%20netflix%20buildwith%20angga%201%20(1).png" alt="" class="rounded mb-3 img-fluid">
+                        </a>
+                            <a href="{{ route('details', $item_courses->slug) }}">
+                            <h4>
+                                {{ $item_courses->title }}
+                            </h4>
+                        </a>
                     </div>
                     @endforeach
 

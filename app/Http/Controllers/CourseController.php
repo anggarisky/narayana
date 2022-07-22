@@ -16,7 +16,8 @@ class CourseController extends Controller
     public function index()
     {
         //
-        return view('cms_courses/index');
+        $courses = Course::all();
+        return view('cms_courses/index', compact('courses'));
     }
 
     /**
@@ -62,9 +63,13 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function edit(Course $course)
+    public function edit(Course $course, $id)
     {
         //
+        $course = Course::where([
+            ['id', '=', $id],
+        ])->first();
+        return view('cms_courses/edit', compact('course'));
     }
 
     /**
@@ -74,9 +79,16 @@ class CourseController extends Controller
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(Request $request, Course $course, $id)
     {
         //
+        $data = $request->all(); 
+        $data['slug'] = Str::slug($request->title);
+
+        $course = Course::findOrFail($id);
+        $course->update($data);
+
+        return redirect()->route('admin.overview');
     }
 
     /**

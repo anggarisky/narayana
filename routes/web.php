@@ -35,4 +35,7 @@ Route::middleware([
     Route::get('overview', [CourseController::class, 'index'])->name('admin.overview');
     Route::get('admin/add/course', [CourseController::class, 'create'])->name('admin.create.course');
     Route::post('admin/add/course/save', [CourseController::class, 'store'])->name('admin.add.course.store');
+    Route::get('admin/edit/course/{id}', [CourseController::class, 'edit'])->name('admin.course.edit');
+    Route::put('admin/update/course/save/{id}', [CourseController::class, 'update'])->name('admin.course.update');
+
 });
