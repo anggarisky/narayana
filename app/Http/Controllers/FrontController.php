@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\CourseVideo;
 
 class FrontController extends Controller
 {
@@ -19,9 +20,14 @@ class FrontController extends Controller
         $course_details = Course::where([
             ['slug', '=', $slug],
         ])->first();
+
+        $videos = CourseVideo::where([
+            ['id_course', '=', $course_details->id],
+        ])->get();
+        
         if($course_details)
         {
-            return view('details', compact('course_details'));
+            return view('details', compact('course_details', 'videos'));
         }
     }
 }

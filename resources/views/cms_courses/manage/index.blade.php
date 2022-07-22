@@ -14,9 +14,12 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
-                <h1>Courses (CMS)</h1>
                 <p>
-                    <a href="{{ route('admin.create.course') }}" class="btn btn-primary">New Course</a>
+                    <a href="{{ route('admin.overview') }}" class="btn btn-danger">Back to Course</a>
+                </p>
+                <h1>Course Videos - {{ $course->title }}</h1>
+                <p>
+                    <a href="{{ route('admin.course.manage.create', $course->id) }}" class="btn btn-primary">Add Video</a>
                 </p>
             </div>
         </div>
@@ -27,21 +30,15 @@
                     <thead>
                       <tr>
                         <th scope="col">Title</th>
-                        <th scope="col">Thumbnail</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach($courses as $item_courses)
+                        @foreach($videos as $item_videos)
                         <tr>
-                            <td>{{ $item_courses->title }}</td>
+                            <td>{{ $item_videos->video_title }}</td>
                             <td>
-                                <img src="{{ $item_courses->thumbnail }}" height="90" alt="">
-                            </td>
-                            <td>
-                                <a href="{{ route('admin.course.manage', $item_courses->id) }}" class="btn btn-info">Manage</a>
-                                <a target="_blank" href="{{ route('details', $item_courses->slug) }}" class="btn btn-success">View</a>
-                                <a href="{{ route('admin.course.edit', $item_courses->id) }}" class="btn btn-info">Edit</a>
+                                <a href="{{ route('admin.course.manage.edit', $item_videos->id) }}" class="btn btn-info">Edit</a>
                             </td>
                         </tr>
                         @endforeach

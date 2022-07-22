@@ -11,6 +11,7 @@
     <title>Nara Academy</title>
   </head>
   <body>
+    @include ('components/navbar')
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
@@ -20,8 +21,13 @@
                 </p>
                 <div class="row">
                     <div class="col-lg-9">
-                        <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreens></iframe>
+                        <div class="course-plyr">
+                            <div class="plyr__video-embed ratio ratio-16x9" id="player">
+                                <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreens></iframe>
+                                <iframe
+                                    src="https://www.youtube.com/embed/{{ $course_details->trailer }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&autoplay=1"
+                                    allowfullscreen allowtransparency allow="autoplay"></iframe>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -30,20 +36,13 @@
                         </h5>
                         <ul>
                             <li>
-                                <a href="#">Trailer Kelas</a>
+                                <a class="btn-preview-materi" href="#{{ $course_details->trailer }}">Trailer Kelas</a>
                             </li>
+                            @foreach($videos as $item_video)
                             <li>
-                                <a href="#">Installation</a>
+                                <a class="btn-preview-materi" href="#{{ $item_video->video_url }}">{{ $item_video->video_title }}</a>
                             </li>
-                            <li>
-                                <a href="#">Download Source Code</a>
-                            </li>
-                            <li>
-                                <a href="#">How to Manage People</a>
-                            </li>
-                            <li>
-                                <a href="#">AB Testing Marketing</a>
-                            </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>
@@ -54,6 +53,24 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-  </body>
+    <script>
+        $(function() {
+            $(document).on('click', '.btn-preview-materi', function() {
+                let _this = $(this);
+                let video_id = _this.attr('href').substr(1);
+                $('.btn-preview-materi').removeClass('active');
+                _this.addClass('active');
+                $('#player').remove();
+                $('.course-plyr').append(
+                    '<div class="plyr__video-embed ratio video-place ratio-16x9" id="player"><iframe src="https://www.youtube.com/embed/' +
+                    video_id +
+                    '?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1&autoplay=1" allowfullscreen allowtransparency allow="autoplay"></iframe></div>'
+                );
+                initPlayer()
+            });
+        })
+    </script>
+</body>
 </html>

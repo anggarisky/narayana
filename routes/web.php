@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\CourseVideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +34,16 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('overview', [CourseController::class, 'index'])->name('admin.overview');
+    
     Route::get('admin/add/course', [CourseController::class, 'create'])->name('admin.create.course');
     Route::post('admin/add/course/save', [CourseController::class, 'store'])->name('admin.add.course.store');
     Route::get('admin/edit/course/{id}', [CourseController::class, 'edit'])->name('admin.course.edit');
     Route::put('admin/update/course/save/{id}', [CourseController::class, 'update'])->name('admin.course.update');
+
+    Route::get('admin/course/manage/{id}', [CourseVideoController::class, 'manage'])->name('admin.course.manage');
+    Route::get('admin/course/manage/create/{id}', [CourseVideoController::class, 'create'])->name('admin.course.manage.create');
+    Route::post('admin/course/manage/save', [CourseVideoController::class, 'store'])->name('admin.course.manage.store');
+    Route::get('admin/course/manage/edit/{id}', [CourseVideoController::class, 'show'])->name('admin.course.manage.edit');
+    Route::put('admin/update/manage/update/{id}', [CourseVideoController::class, 'update'])->name('admin.course.manage.update');
 
 });
