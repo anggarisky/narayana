@@ -19,10 +19,10 @@
                     @foreach($courses as $item_courses)
                     <div class="col-lg-4">
                         <h3>
-                            Design System
+                            {{ $item_courses->title }}
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam sint laborum nulla tempora eligendi ea totam provident temporibus natus mollitia, quam aliquam magnam in nemo ut magni accusamus. Voluptatibus, ratione.
+                            {{ $item_courses->about }}
                         </p>
                         <p>
                             <a href="{{ route('details', $item_courses->slug) }}" class="btn btn-primary">Join Course</a>

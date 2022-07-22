@@ -16,7 +16,7 @@
             <div class="col-lg-10 offset-lg-1">
                 <h1>{{ $course_details->title }}</h1>
                 <p>
-                    Creator: 123
+                    Creator: {{ $course_details->id_creator }}
                 </p>
                 <div class="row">
                     <div class="col-lg-9">
