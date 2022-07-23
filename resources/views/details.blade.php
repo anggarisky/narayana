@@ -14,13 +14,13 @@
     @include ('components/navbar')
     <div class="container py-5">
         <div class="row">
-            <div class="col-lg-10 offset-lg-1">
+            <div class="col-lg-12">
                 <h1>{{ $course_details->title }}</h1>
                 <p>
                     Creator: {{ $course_details->id_creator }}
                 </p>
-                <div class="row">
-                    <div class="col-lg-9">
+                <div class="row mt-5">
+                    <div class="col-lg-8">
                         <div class="course-plyr">
                             <div class="plyr__video-embed ratio ratio-16x9" id="player">
                                 <iframe src="https://www.youtube-nocookie.com/embed/{{ $course_details->trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreens></iframe>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3">
+                    <div class="col-lg-4">
                         <h5>
                             Materi Kelas
                         </h5>
@@ -48,7 +48,7 @@
                             @else
                                 @foreach($videos as $item_video)
                                 <li>
-                                    <a href="#">{{ $item_video->video_title }}</a>
+                                    <a href="#">{{ $item_video->video_title }} [Locked]</a>
                                 </li>
                                 @endforeach
                             @endif
@@ -56,11 +56,21 @@
                             @guest
                                 @foreach($videos as $item_video)
                                 <li>
-                                    <a href="#">{{ $item_video->video_title }}</a>
+                                    <a href="#">{{ $item_video->video_title }} [Locked]</a>
                                 </li>
                                 @endforeach
                             @endguest
                         </ul>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <h5>
+                            Tentang Kelas
+                        </h5>
+                        <p>
+                            {{ $course_details->about }}
+                        </p>
                     </div>
                 </div>
             </div>

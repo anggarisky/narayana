@@ -9,14 +9,8 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Alur Belajar</a> 
-          </li>
           <li class="nav-item"> 
-            <a class="nav-link" href="#">Biaya</a> 
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link" href="#">Projects</a>
+            <a target="_blank" class="nav-link" href="https://mangrove-pedestrian-89c.notion.site/Upgrade-to-Pro-96fc78cbdbe04ef5bafa31b7db973e13">Biaya Belajar</a> 
           </li>
 
           @auth
