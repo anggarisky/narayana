@@ -17,6 +17,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+        //change url
         if(Auth::user()->isAdmin)
         {
             return $next($request);
