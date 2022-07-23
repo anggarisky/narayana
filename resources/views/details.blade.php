@@ -38,11 +38,28 @@
                             <li>
                                 <a class="btn-preview-materi" href="#{{ $course_details->trailer }}">Trailer Kelas</a>
                             </li>
-                            @foreach($videos as $item_video)
-                            <li>
-                                <a class="btn-preview-materi" href="#{{ $item_video->video_url }}">{{ $item_video->video_title }}</a>
-                            </li>
-                            @endforeach
+                            @auth
+                            @if (Auth::user()->is_premium == 1)
+                                @foreach($videos as $item_video)
+                                <li>
+                                    <a class="btn-preview-materi" href="#{{ $item_video->video_url }}">{{ $item_video->video_title }}</a>
+                                </li>
+                                @endforeach
+                            @else
+                                @foreach($videos as $item_video)
+                                <li>
+                                    <a href="#">{{ $item_video->video_title }}</a>
+                                </li>
+                                @endforeach
+                            @endif
+                            @endauth
+                            @guest
+                                @foreach($videos as $item_video)
+                                <li>
+                                    <a href="#">{{ $item_video->video_title }}</a>
+                                </li>
+                                @endforeach
+                            @endguest
                         </ul>
                     </div>
                 </div>
