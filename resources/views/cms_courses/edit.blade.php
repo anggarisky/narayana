@@ -14,7 +14,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
-                <h1>New Courses</h1>
+                <h1>Edit Courses</h1>
                 <form enctype="multipart/form-data" method="POST" action="{{ route('admin.course.update', $course->id) }}">
                     @method('PUT')
                     @csrf
@@ -31,6 +31,17 @@
                       <label for="exampleInputEmail1" class="form-label">Title</label>
                       <input type="text" value="{{ $course->title }}" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Status Kelas</label>
+
+                      <div class="form-floating">
+                          <select name="isOpen" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected value="0">Pilih Status</option>
+                            <option value="1">Kelas Dibuka</option>
+                            <option value="0">Kelas Ditutup</option>
+                          </select>
+                        </div>
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Link Trailer</label>

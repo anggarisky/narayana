@@ -11,7 +11,7 @@ class FrontController extends Controller
     //
     public function index()
     {
-        $courses = Course::latest()->limit(6)->get();
+        $courses = Course::latest()->where('isOpen', 1)->limit(6)->get();
         return view('landing', compact('courses'));
     }
 
