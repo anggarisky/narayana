@@ -16,6 +16,24 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                @auth
+                @if (Auth::user()->email == 'admin@narayana.com')
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.overview') }}" :active="request()->routeIs('admin.overview')">
+                        {{ __('Courses') }}
+                    </x-jet-nav-link>
+                </div>
+                @endif
+                @endauth
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    <x-jet-nav-link href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                        {{ __('Logout') }}
+                    </x-jet-nav-link>
+                    </form>
+                </div>
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

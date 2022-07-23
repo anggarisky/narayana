@@ -23,16 +23,7 @@ Route::redirect('/', '/landing');
 Route::get('landing', [FrontController::class, 'index'])->name('landing');
 Route::get('details/{slug}', [FrontController::class, 'details'])->name('details');
 
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
+Route::group(['middleware'=> ['admin']], function () {
     Route::get('overview', [CourseController::class, 'index'])->name('admin.overview');
     
     Route::get('admin/add/course', [CourseController::class, 'create'])->name('admin.create.course');
@@ -45,5 +36,16 @@ Route::middleware([
     Route::post('admin/course/manage/save', [CourseVideoController::class, 'store'])->name('admin.course.manage.store');
     Route::get('admin/course/manage/edit/{id}', [CourseVideoController::class, 'show'])->name('admin.course.manage.edit');
     Route::put('admin/update/manage/update/{id}', [CourseVideoController::class, 'update'])->name('admin.course.manage.update');
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
 });

@@ -11,45 +11,52 @@
     <title>Tayooo Mo</title>
   </head>
   <body>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-6 offset-lg-3">
-                <h1>Courses (CMS)</h1>
-                <p>
-                    <a href="{{ route('admin.create.course') }}" class="btn btn-primary">New Course</a>
-                </p>
+    <x-app-layout>
+        <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Courses') }}
+            </h2>
+        </x-slot>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <p>
+                        <a href="{{ route('admin.create.course') }}" class="btn btn-primary">New Course</a>
+                    </p>
+                </div>
+            </div>
+    
+            <div class="row mt-5">
+                <div class="col-lg-8">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Thumbnail</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($courses as $item_courses)
+                            <tr>
+                                <td>{{ $item_courses->title }}</td>
+                                <td>
+                                    <img src="{{ $item_courses->thumbnail }}" height="90" alt="">
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.course.manage', $item_courses->id) }}" class="btn btn-info">Manage</a>
+                                    <a target="_blank" href="{{ route('details', $item_courses->slug) }}" class="btn btn-success">View</a>
+                                    <a href="{{ route('admin.course.edit', $item_courses->id) }}" class="btn btn-info">Edit</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                      </table>
+                </div>
             </div>
         </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-8">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Thumbnail</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($courses as $item_courses)
-                        <tr>
-                            <td>{{ $item_courses->title }}</td>
-                            <td>
-                                <img src="{{ $item_courses->thumbnail }}" height="90" alt="">
-                            </td>
-                            <td>
-                                <a href="{{ route('admin.course.manage', $item_courses->id) }}" class="btn btn-info">Manage</a>
-                                <a target="_blank" href="{{ route('details', $item_courses->slug) }}" class="btn btn-success">View</a>
-                                <a href="{{ route('admin.course.edit', $item_courses->id) }}" class="btn btn-info">Edit</a>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
-            </div>
-        </div>
-    </div>
+    </x-app-layout>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
