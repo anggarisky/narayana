@@ -16,7 +16,8 @@ class Course extends Model
         'slug',
         'trailer',
         'about',
-        'id_creator'
+        'id_creator',
+        'thumbnail'
     ];
 
     protected $hidden = [

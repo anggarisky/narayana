@@ -15,13 +15,17 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3">
                 <h1>New Courses</h1>
-                <form method="POST" action="{{ route('admin.add.course.store') }}">
+                <form enctype="multipart/form-data" method="POST" action="{{ route('admin.add.course.store') }}">
 
                     @csrf
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Title</label>
                       <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">thumbnail</label>
+                      <input type="file" name="thumbnail" class="form-control" id="exampleInputPassword1">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Link Trailer</label>

@@ -47,6 +47,10 @@ class CourseController extends Controller
     {
         //
         $data = $request->all();
+        if($request->file('thumbnail'))
+        {
+            $data['thumbnail'] = $request->file('thumbnail')->store('assets/thumbnail_courses', 'public');
+        }
         $data['slug'] = Str::slug($request->title);
         Course::create($data);
         return redirect()->route('admin.overview');
@@ -89,6 +93,10 @@ class CourseController extends Controller
     {
         //
         $data = $request->all(); 
+        if($request->file('thumbnail'))
+        {
+            $data['thumbnail'] = $request->file('thumbnail')->store('assets/thumbnail_courses', 'public');
+        }
         $data['slug'] = Str::slug($request->title);
 
         $course = Course::findOrFail($id);

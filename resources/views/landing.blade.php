@@ -26,7 +26,7 @@
                     @foreach($courses as $item_courses)
                     <div class="col-lg-4">
                         <a href="{{ route('details', $item_courses->slug) }}">
-                            <img src="https://buildwithangga.com/storage/assets/thumbnails/kelas%20full%20stack%20laravel%20react%20js%20bikin%20website%20streaming%20netflix%20buildwith%20angga%201%20(1).png" alt="" class="rounded mb-3 img-fluid">
+                            <img src="{{ Storage::url($item_courses->thumbnail) }}" alt="" class="rounded mb-3 img-fluid">
                         </a>
                             <a href="{{ route('details', $item_courses->slug) }}">
                             <h4>

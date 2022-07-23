@@ -38,6 +38,7 @@ Route::group(['middleware'=> ['admin']], function () {
     Route::put('admin/update/manage/update/{id}', [CourseVideoController::class, 'update'])->name('admin.course.manage.update');
 });
 
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
