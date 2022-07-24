@@ -21,17 +21,17 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="row">
                     @foreach($courses as $item_courses)
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <a href="{{ route('details', $item_courses->slug) }}">
                             <img src="{{ Storage::url($item_courses->thumbnail) }}" alt="" class="rounded mb-3 img-fluid">
                         </a>
                             <a href="{{ route('details', $item_courses->slug) }}">
-                            <h4>
+                            <h5>
                                 {{ $item_courses->title }}
-                            </h4>
+                            </h5>
                         </a>
                     </div>
                     @endforeach

@@ -1,16 +1,16 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container">
-      <a class="navbar-brand" href="{{ route('landing') }}">Naracademy</a>
+      <a class="navbar-brand" href="{{ route('landing') }}">NARACADEMY</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
           </li>
           <li class="nav-item"> 
-            <a target="_blank" class="nav-link" href="https://mangrove-pedestrian-89c.notion.site/Upgrade-to-Pro-96fc78cbdbe04ef5bafa31b7db973e13">Biaya Belajar</a> 
+            <a target="_blank" class="nav-link" href="https://mangrove-pedestrian-89c.notion.site/Upgrade-to-Pro-96fc78cbdbe04ef5bafa31b7db973e13">BIAYA</a> 
           </li>
 
           @auth
@@ -40,10 +40,10 @@
           @endauth
           @guest
           <li class="nav-item"> 
-            <a class="nav-link btn btn-info ms-2" href="{{ route('dashboard') }}">Log In</a>
+            <a class="nav-link btn btn-info me-4 ms-2" href="{{ route('dashboard') }}">MASUK AKUN</a>
           </li>
           <li class="nav-item"> 
-            <a class="nav-link btn btn-primary" href="{{ route('register') }}">Daftar Akun</a>
+            <a class="nav-link btn btn-primary" href="{{ route('register') }}">DAFTAR</a>
           </li>
           @endguest
 
