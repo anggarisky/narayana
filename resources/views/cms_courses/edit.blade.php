@@ -37,7 +37,15 @@
 
                       <div class="form-floating">
                           <select name="isOpen" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected value="0">Pilih Status</option>
+                            <option selected value="{{ $course->isOpen }}">
+                            @if($course->isOpen == 0)
+                              Kelas Ditutup
+                            
+                            @else 
+                              Kelas Dibuka
+                          
+                            @endif
+                            </option>
                             <option value="1">Kelas Dibuka</option>
                             <option value="0">Kelas Ditutup</option>
                           </select>
@@ -56,7 +64,7 @@
                       <div class="mb-3">
                         <div class="form-floating">
                             <select name="id_creator" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                              <option selected value="0">Pilih Creator</option>
+                              <option selected value="{{ $course->id_creator }}">{{ $course->id_creator }}</option>
                               <option value="1">Angga</option>
                               <option value="21">Space Crew</option>
                             </select>

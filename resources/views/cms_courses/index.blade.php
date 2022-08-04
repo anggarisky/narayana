@@ -32,6 +32,7 @@
                         <thead>
                           <tr>
                             <th scope="col">Title</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Thumbnail</th>
                             <th scope="col">Action</th>
                           </tr>
@@ -41,10 +42,21 @@
                             <tr>
                                 <td>{{ $item_courses->title }}</td>
                                 <td>
-                                    <img src="{{ $item_courses->thumbnail }}" height="90" alt="">
+                                    @if($item_courses->isOpen == 0)
+                                    <p>
+                                        <span class="p-2 bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">Kelas Ditutup</span>
+                                    </p>  
+                                    @else
+                                    <p class="text-xs font-semibold">
+                                        Kelas Dibuka
+                                    </p>      
+                                    @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('admin.course.manage', $item_courses->id) }}" class="btn btn-info">Manage</a>
+                                    <img src="{{ Storage::url($item_courses->thumbnail) }}" width="90" alt="">
+                                </td>
+                                <td>
+                                    <a href="{{ route('admin.course.manage', $item_courses->id) }}" class="btn btn-warning">Manage</a>
                                     <a target="_blank" href="{{ route('details', $item_courses->slug) }}" class="btn btn-success">View</a>
                                     <a href="{{ route('admin.course.edit', $item_courses->id) }}" class="btn btn-info">Edit</a>
                                 </td>
