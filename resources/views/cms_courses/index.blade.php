@@ -40,7 +40,7 @@
                         <tbody>
                             @foreach($courses as $item_courses)
                             <tr>
-                                <td>{{ $item_courses->title }}</td>
+                                <td width="35%">{{ $item_courses->title }}</td>
                                 <td>
                                     @if($item_courses->isOpen == 0)
                                     <p>
