@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="#">HOME</a>
           </li>
           <li class="nav-item"> 
-            <a target="_blank" class="nav-link" href="https://mangrove-pedestrian-89c.notion.site/Upgrade-to-Pro-96fc78cbdbe04ef5bafa31b7db973e13">BIAYA</a> 
+            <a target="_blank" class="nav-link" href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0">BIAYA</a> 
           </li>
 
           @auth

@@ -31,30 +31,43 @@
         ></span>
         <ul class="flex gap-x-8 mr-auto">
           <li class="">
-            <a href="#" class="text-purple font-bold">Home</a>
+            <a href="{{ route('landing') }}" class="text-purple font-bold">Home</a>
           </li>
           <li class="">
             <a href="#" class="text-navy">Library</a>
           </li>
           <li class="">
-            <a href="#" class="text-navy">Pricing</a>
+            <a href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0" class="text-navy">Pricing</a>
           </li>
           <li class="">
             <a href="#" class="text-navy">About</a>
           </li>
         </ul>
+
+        @if(Auth::user())
         <ul class="flex gap-x-4">
           <li class="">
-            <a href="#" class="bg-secondary text-white rounded-full py-4 px-14"
+            <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-10"
+              >Hello, {{ Auth::user()->name }}</a
+            >
+          </li>
+        </ul>
+        @endauth
+        @guest
+        <ul class="flex gap-x-4">
+          <li class="">
+            <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-14"
               >Login</a
             >
           </li>
           <li class="">
-            <a href="#" class="bg-primary text-white rounded-full py-4 px-10"
+            <a href="{{ route('register') }}" class="bg-primary text-white rounded-full py-4 px-10"
               >Create Account</a
             >
           </li>
         </ul>
+        @endguest
+
       </div>
     </div>
     <hr class="border-gray-100 mb-[70px]" />
