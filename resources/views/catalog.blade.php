@@ -31,10 +31,10 @@
         ></span>
         <ul class="flex gap-x-8 mr-auto">
           <li class="">
-            <a href="{{ route('landing') }}" class="text-purple font-bold">Home</a>
+            <a href="{{ route('landing') }}" class="text-navy ">Home</a>
           </li>
           <li class="">
-            <a href="{{ route('catalog') }}" class="text-navy">Catalog</a>
+            <a href="{{ route('catalog') }}" class="text-purple font-bold">Catalog</a>
           </li>
           <li class="">
             <a href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0" class="text-navy">Pricing</a>
@@ -72,8 +72,79 @@
     </div>
     <hr class="border-gray-100 mb-[70px]" />
     <div class="container mx-auto mb-[70px]">
+        <div class="flex flex-col">
+          <h2 class="text-3xl font-extrabold mb-5">What's Popular</h2>
+          <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
+            <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
+                <div class="w-full relative mb-6">
+                  <span
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-shadow/20 blur-[100px] w-[75%] h-40"
+                  ></span>
+                </div>
+                <div class="mb-3 px-6">
+                  <p>
+                      Learn All
+                  </p>
+                </div>
+                <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
+                    Website Development
+                </h6>
+                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+            </div>
+            <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
+                <div class="w-full relative mb-6">
+                  <span
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-shadow/20 blur-[100px] w-[75%] h-40"
+                  ></span>
+                </div>
+                <div class="mb-3 px-6">
+                  <p>
+                      Learn All
+                  </p>
+                </div>
+                <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
+                    Product Design
+                </h6>
+                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+            </div>
+            <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
+                <div class="w-full relative mb-6">
+                  <span
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-shadow/20 blur-[100px] w-[75%] h-40"
+                  ></span>
+                </div>
+                <div class="mb-3 px-6">
+                  <p>
+                      Learn All
+                  </p>
+                </div>
+                <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
+                    Mobile Development
+                </h6>
+                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+            </div>
+            <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
+                <div class="w-full relative mb-6">
+                  <span
+                    class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-purple-shadow/20 blur-[100px] w-[75%] h-40"
+                  ></span>
+                </div>
+                <div class="mb-3 px-6">
+                  <p>
+                      Learn All
+                  </p>
+                </div>
+                <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
+                    Digital Marketing
+                </h6>
+                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="container mx-auto mb-[70px]">
       <div class="flex flex-col">
-        <h2 class="text-3xl font-extrabold mb-5">Learn In-Demand Skills</h2>
+        <h2 class="text-3xl font-extrabold mb-5">Popular in Website Development</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
 
           <!-- start column course -->
@@ -112,7 +183,7 @@
 
     <div class="container mx-auto mb-[70px]">
       <div class="flex flex-col">
-        <h2 class="text-3xl font-extrabold mb-5">Recommended For You</h2>
+        <h2 class="text-3xl font-extrabold mb-5">Popular in Product Design</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
 
 

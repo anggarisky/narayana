@@ -21,6 +21,7 @@ Route::get('/', function () {
 });
 Route::redirect('/', '/landing');
 Route::get('landing', [FrontController::class, 'index'])->name('landing');
+Route::get('catalog', [FrontController::class, 'catalog'])->name('catalog');
 Route::get('details/{slug}', [FrontController::class, 'details'])->name('details');
 
 Route::group(['middleware'=> ['admin']], function () {
