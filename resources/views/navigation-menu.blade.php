@@ -23,6 +23,11 @@
                         {{ __('Courses') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('admin.students') }}" :active="request()->routeIs('admin.students')">
+                        {{ __('Students') }}
+                    </x-jet-nav-link>
+                </div>
                 @endif
                 @endauth
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

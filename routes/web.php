@@ -27,6 +27,7 @@ Route::get('browse/{category}', [FrontController::class, 'browse'])->name('brows
 
 Route::group(['middleware'=> ['admin']], function () {
     Route::get('overview', [CourseController::class, 'index'])->name('admin.overview');
+    Route::get('students', [CourseController::class, 'students'])->name('admin.students');
     
     Route::get('admin/add/course', [CourseController::class, 'create'])->name('admin.create.course');
     Route::post('admin/add/course/save', [CourseController::class, 'store'])->name('admin.add.course.store');

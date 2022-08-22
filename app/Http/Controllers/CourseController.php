@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -24,6 +25,13 @@ class CourseController extends Controller
         //
         $courses = Course::all();
         return view('cms_courses/index', compact('courses'));
+    }
+
+    public function students()
+    {
+        //
+        $students = User::all();
+        return view('cms_courses/students', compact('students'));
     }
 
     /**
