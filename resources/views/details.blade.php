@@ -14,57 +14,58 @@
   <body>
     {{-- @include ('components/navbar') --}}
     <div class="container mx-auto">
-        <div class="flex items-center gap-x-12 py-10">
-          <div id="logo" class="flex flex-col">
-            <span class="font-extrabold uppercase text-3xl text-secondary"
-              >NARACADEMY</span
-            >
-            <span class="text-grey tracking-wider">Build Future Career Today</span>
-          </div>
-          <span
-            class="border-r border-gray-100 h-14 w-[1px] relative flex"
-          ></span>
-          <ul class="flex gap-x-8 mr-auto">
-            <li class="">
-              <a href="{{ route('landing') }}" class="text-purple font-bold">Home</a>
-            </li>
-            <li class="">
-              <a href="#" class="text-navy">Library</a>
-            </li>
-            <li class="">
-              <a href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0" class="text-navy">Pricing</a>
-            </li>
-            <li class="">
-              <a href="#" class="text-navy">About</a>
-            </li>
-          </ul>
-  
-          @if(Auth::user())
-          <ul class="flex gap-x-4">
-            <li class="">
-              <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-10"
-                >Hello, {{ Auth::user()->name }}</a
-              >
-            </li>
-          </ul>
-          @endauth
-          @guest
-          <ul class="flex gap-x-4">
-            <li class="">
-              <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-14"
-                >Login</a
-              >
-            </li>
-            <li class="">
-              <a href="{{ route('register') }}" class="bg-primary text-white rounded-full py-4 px-10"
-                >Create Account</a
-              >
-            </li>
-          </ul>
-          @endguest
-  
+      <div class="flex items-center gap-x-12 py-10">
+        <div id="logo" class="flex flex-col">
+          <span class="font-extrabold uppercase text-3xl text-secondary"
+            >NARACADEMY</span
+          >
+          <span class="text-grey tracking-wider">Build Future Career Today</span>
         </div>
+        <span
+          class="border-r border-gray-100 h-14 w-[1px] relative flex"
+        ></span>
+        <ul class="flex gap-x-8 mr-auto">
+          <li class="">
+            <a href="{{ route('landing') }}" class="text-navy ">Home</a>
+          </li>
+          <li class="">
+            <a href="{{ route('catalog') }}" class="text-navy">Catalog</a>
+          </li>
+          <li class="">
+            <a href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0" class="text-navy">Pricing</a>
+          </li>
+          <li class="">
+            <a href="#" class="text-navy">About</a>
+          </li>
+        </ul>
+
+        @if(Auth::user())
+        <ul class="flex gap-x-4">
+          <li class="">
+            <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-10"
+              >Hello, {{ Auth::user()->name }}</a
+            >
+          </li>
+        </ul>
+        @endauth
+        @guest
+        <ul class="flex gap-x-4">
+          <li class="">
+            <a href="{{ route('dashboard') }}" class="bg-secondary text-white rounded-full py-4 px-14"
+              >Login</a
+            >
+          </li>
+          <li class="">
+            <a href="{{ route('register') }}" class="bg-primary text-white rounded-full py-4 px-10"
+              >Create Account</a
+            >
+          </li>
+        </ul>
+        @endguest
+
       </div>
+    </div>
+    <hr class="border-gray-100 mb-[70px]" />
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-12">

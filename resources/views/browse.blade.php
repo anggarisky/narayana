@@ -34,7 +34,7 @@
             <a href="{{ route('landing') }}" class="text-navy ">Home</a>
           </li>
           <li class="">
-            <a href="{{ route('catalog') }}" class="text-purple font-bold">Catalog</a>
+            <a href="{{ route('catalog') }}" class="text-navy">Catalog</a>
           </li>
           <li class="">
             <a href="https://stingy-droplet-bb0.notion.site/Learn-From-Expert-Become-Pro-086e766248bf4e2c99667e4fcf697bb0" class="text-navy">Pricing</a>
@@ -73,11 +73,11 @@
     <hr class="border-gray-100 mb-[70px]" />
     <div class="container mx-auto mb-[70px]">
       <div class="flex flex-col">
-        <h2 class="text-3xl font-extrabold mb-5">Popular in slugCate</h2>
+        <h2 class="text-3xl font-extrabold mb-5">Popular in {{ ucwords($category) }}</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
 
           <!-- start column course -->
-          @foreach($courses_random as $item_courses)
+          @foreach($course_browse as $item_courses)
           <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
             <div class="w-full relative mb-6">
               <span

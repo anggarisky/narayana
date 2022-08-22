@@ -89,7 +89,7 @@
                 <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
                     Website Development
                 </h6>
-                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+                <a href="{{ route('browse', 'Website Development') }}" class="absolute inset-0 z-30"><!-- link here --></a>
             </div>
             <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
                 <div class="w-full relative mb-6">
@@ -105,7 +105,7 @@
                 <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
                     Product Design
                 </h6>
-                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+                <a href="{{ route('browse', 'Product Design') }}" class="absolute inset-0 z-30"><!-- link here --></a>
             </div>
             <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
                 <div class="w-full relative mb-6">
@@ -121,7 +121,7 @@
                 <h6 class="font-semibold text-lg px-6 mb-6 pr-20">
                     Mobile Development
                 </h6>
-                <a href="#" class="absolute inset-0 z-30"><!-- link here --></a>
+                <a href="{{ route('browse', 'Mobile Development') }}" class="absolute inset-0 z-30"><!-- link here --></a>
             </div>
             <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
                 <div class="w-full relative mb-6">

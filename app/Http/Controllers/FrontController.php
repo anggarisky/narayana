@@ -39,4 +39,16 @@ class FrontController extends Controller
             return view('details', compact('course_details', 'videos'));
         }
     }
+
+    public function browse($category)
+    {
+        $course_browse = Course::where([
+            ['category', '=', $category],
+        ])->get();
+        
+        if($course_browse)
+        {
+            return view('browse', compact('course_browse', 'category'));
+        }
+    }
 }

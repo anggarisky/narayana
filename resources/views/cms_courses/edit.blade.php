@@ -35,8 +35,8 @@
                     <div class="mb-3">
                       <div class="form-floating">
                           <select name="category" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected value="null">Select Category</option>
-                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option selected value="{{ $course->category }}">{{ $course->category }}</option>
+                            <option value="Product Design">Product Design</option>
                             <option value="Website Development">Website Development</option>
                             <option value="Mobile Development">Mobile Development</option>
                           </select>
