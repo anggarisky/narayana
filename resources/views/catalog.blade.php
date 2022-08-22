@@ -148,7 +148,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-8">
 
           <!-- start column course -->
-          @foreach($courses_random as $item_courses)
+          @foreach($courses_website_development as $item_courses)
           <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
             <div class="w-full relative mb-6">
               <span
@@ -188,7 +188,7 @@
 
 
           <!-- start column course -->
-          @foreach($courses_random as $item_courses)
+          @foreach($courses_product_design as $item_courses)
           <div class="flex flex-col p-[10px] rounded-[30px] bg-soft-purple overflow-hidden relative">
             <div class="w-full relative mb-6">
               <span

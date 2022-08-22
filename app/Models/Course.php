@@ -18,7 +18,8 @@ class Course extends Model
         'about',
         'id_creator',
         'thumbnail',
-        'isOpen'
+        'isOpen',
+        'category'
     ];
 
     protected $hidden = [

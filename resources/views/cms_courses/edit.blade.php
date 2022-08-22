@@ -33,6 +33,17 @@
 
                     </div>
                     <div class="mb-3">
+                      <div class="form-floating">
+                          <select name="category" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected value="null">Select Category</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Website Development">Website Development</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                          </select>
+                          <label for="floatingSelect">Works with selects</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Status Kelas</label>
 
                       <div class="form-floating">

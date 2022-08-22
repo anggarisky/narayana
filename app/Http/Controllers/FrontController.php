@@ -18,9 +18,10 @@ class FrontController extends Controller
 
     public function catalog ()
     {
-        $courses = Course::latest()->where('isOpen', 1)->get();
+        $courses_product_design = Course::latest()->where('isOpen', 1)->where('category', 'UI/UX Design')->get();
+        $courses_website_development = Course::latest()->where('isOpen', 1)->where('category', 'Website Development')->get();
         $courses_random = Course::where('isOpen', 1)->inRandomOrder()->limit(4)->get();
-        return view('catalog', compact('courses', 'courses_random'));
+        return view('catalog', compact('courses_random', 'courses_product_design', 'courses_website_development'));
     }
 
     public function details($slug)
